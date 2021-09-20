@@ -8,6 +8,7 @@
             <li v-for="(post,index) in posts" :key="index">
               <nuxt-link :to="{ name: 'posts-id', params:{id: post.slug}}">{{ post.title }}</nuxt-link></li>
           </ul>
+          <NavButton/>
         </b-col>
       </b-row>
     </b-container>
@@ -17,8 +18,9 @@
 </template>
 
 <script>
-
+import NavButton from '@/components/NavButton.vue'
 export default {
+
   data: () => ({
     posts: []
 }),
@@ -39,7 +41,6 @@ export default {
     return {
       posts: store.state.posts.posts
     }
-
 }
 
 }
